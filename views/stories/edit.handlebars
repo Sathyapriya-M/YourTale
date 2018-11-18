@@ -1,0 +1,21 @@
+{{#each errors}}
+    <div class="alert alert-danger">{{text}}</div>
+{{else}}
+
+{{/each}}
+
+<div class="card card-body">
+    <h3>Edit Story Idea</h3>
+    <form action="/stories/{{story.id}}?_method=PUT" method="post">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="form-group">
+           <label for="title">Title</label>
+           <input type="text" class="form-control" name="title" value="{{story.title}}">
+        </div>
+        <div class="form-group">
+           <label for="content">Content</label>
+           <input type="text" class="form-control" name="content" value="{{story.content}}"></input>
+        </div>
+        <button type="submit" class="btn btn-primary">Post</button>
+    </form>
+</div>
